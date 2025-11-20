@@ -48,7 +48,7 @@ interface DialogProps {
 }
 
 export function RequestForm({ open, onOpenChange }: DialogProps) {
-  const [selectedTeacher, setSelectedTeacher] = useState<string>("");
+  // const [selectedTeacher, setSelectedTeacher] = useState<string>("");
 
 
 
@@ -123,10 +123,6 @@ export function RequestForm({ open, onOpenChange }: DialogProps) {
                     <FormItem>
                       <FormLabel>Select Teacher or Office</FormLabel>
                       <Select
-                        onValueChange={(value) => {
-                          field.onChange(value);
-                          setSelectedTeacher(value);
-                        }}
                         defaultValue={field.value}
                       >
                         <FormControl>
@@ -159,10 +155,6 @@ export function RequestForm({ open, onOpenChange }: DialogProps) {
                     <FormItem>
                       <FormLabel>Select Requirment</FormLabel>
                       <Select
-                        onValueChange={(value) => {
-                          field.onChange(value);
-                          setSelectedTeacher(value);
-                        }}
                         defaultValue={field.value}
                       >
                         <FormControl>
