@@ -9,12 +9,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import axiosClient from '@/lib/axiosClient';
-import { getXsrfToken } from "@/lib/crf_token"
-import { Loader2 } from "lucide-react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 
 interface DialogProps {
     open: boolean,
@@ -22,7 +17,6 @@ interface DialogProps {
 }
 
 export default function ConfirmLogout({ open, onOpenChange }: DialogProps) {
-    const [isLoading,setisLoading] = useState<boolean>(false)
     const navigate = useNavigate()
 
     // function onConfirm() {
@@ -74,9 +68,6 @@ export default function ConfirmLogout({ open, onOpenChange }: DialogProps) {
                         onClick={() => navigate('/')}
                         className="bg-red-600 text-white rounded-xl hover:bg-red-700"
                     >
-                        {isLoading && <Loader2/>}
-                        {isLoading ? "Loading..." : "Yes, Logout"}
-                        
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
