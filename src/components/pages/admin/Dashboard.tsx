@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, Trash2 } from "lucide-react";
+import { Menu,  PenBox, Trash2 } from "lucide-react";
 import { Users, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -37,12 +37,6 @@ function AdminDashboard() {
             >
               Manage Subject
             </button>
-            <button
-              onClick={() => navigate('/admin-teacher-list')}
-              className="w-full cursor-pointer text-left py-2 px-3 rounded hover:bg-gray-200"
-            >
-              Manage Teacher
-            </button>
           </nav>
         </div>
 
@@ -66,12 +60,6 @@ function AdminDashboard() {
         <div>
           <h2 className="text-xl font-bold mb-6">Teacher Name</h2>
           <nav className="space-y-3">
-            <button
-              onClick={() => navigate('')}
-              className="w-full cursor-pointer text-left py-2 px-3 rounded hover:bg-gray-200"
-            >
-              Manage Teacher
-            </button>
             <button
               onClick={() => navigate('/admin-department-list')}
               className="w-full cursor-pointer text-left py-2 px-3 rounded hover:bg-gray-200"
@@ -122,9 +110,9 @@ function AdminDashboard() {
         {/* Table */}
         <div className="bg-white p-6 shadow rounded-xl">
           <div className="flex p-3 justify-between items-center">
-            <h2 className="font-bold">Office List</h2>
+            <h2 className="font-bold">Office/Teacher List</h2>
             <Button onClick={() => setIsOpenAddOffice(true)} className="cursor-pointer" variant={'default'}>
-              Add New Office
+              Add New Office/Teacher
             </Button>
           </div>
           <Table>
@@ -144,6 +132,9 @@ function AdminDashboard() {
                 <TableCell>BSIT</TableCell>
                 <TableCell>Library</TableCell>
                 <TableCell>
+                  <Button onClick={() => setIsOpenConfirmModal(true)} className="cursor-pointer text-blue-500 bg-transparent">
+                    <PenBox />
+                  </Button>
                   <Button onClick={() => setIsOpenConfirmModal(true)} className="cursor-pointer text-red-500 bg-transparent">
                     <Trash2 />
                   </Button>
