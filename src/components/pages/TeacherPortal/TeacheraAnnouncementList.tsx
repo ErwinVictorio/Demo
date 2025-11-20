@@ -46,6 +46,7 @@ function TeacherAnnoucement() {
                 title: "Christmas Party Preparation",
                 message: "All teachers are invited to join the committee meeting for the upcoming Christmas Party this Thursday at 4 PM.",
             },
+            
             {
                 id: 5,
                 title: "Online Portal Maintenance",

@@ -28,7 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 
 
 
@@ -240,7 +240,9 @@ export function RequestForm({ open, onOpenChange }: DialogProps) {
           <Card className="border shadow-sm bg-gray-50 h-full">
             <CardHeader>
               <CardTitle className="text-lg text-gray-700">
-                <h1>Requirements Here</h1>
+                 <CardDescription>
+                  Requirements of the selected Teacher/office here
+                 </CardDescription>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-sm text-gray-700">

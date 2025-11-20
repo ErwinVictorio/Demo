@@ -10,8 +10,6 @@ import Teacher from './components/pages/TeacherPortal/Teacher'
 import TeacherList from './components/pages/admin/TeacherList'
 import ManageRequirment from './components/pages/TeacherPortal/RequirmentList'
 import TeacherAnnoucement from './components/pages/TeacherPortal/TeacheraAnnouncementList'
-import ProtectRoute from './lib/ProtectRoute'
-import PreventBack from './lib/PreventBack'
 import SubjectList from './components/pages/admin/Subjects'
 import MyDoc from './components/pages/studentPortal/MyDoc'
 

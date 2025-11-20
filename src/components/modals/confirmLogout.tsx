@@ -25,30 +25,31 @@ export default function ConfirmLogout({ open, onOpenChange }: DialogProps) {
     const [isLoading,setisLoading] = useState<boolean>(false)
     const navigate = useNavigate()
 
-    function onConfirm() {
-        setisLoading(true)
-        try {
-            axiosClient({
-                method: 'post',
-                url: 'api/logout',
-                headers: {
-                    "X-XSRF-TOKEN": getXsrfToken() ?? ""
-                }
-            }).then((res) => {
-                console.log(res.data)
-                if (res.data.success == true) {
-                     navigate('/')
-                }
+    // function onConfirm() {
+    //     setisLoading(true)
+    //     try {
+    //         axiosClient({
+    //             method: 'post',
+    //             url: 'api/logout',
+    //             headers: {
+    //                 "X-XSRF-TOKEN": getXsrfToken() ?? ""
+    //             }
+    //         }).then((res) => {
+    //             console.log(res.data)
+    //             if (res.data.success == true) {
+    //                  navigate('/')
+    //             }
                
-            })
-        } catch (error) {
-            console.log(error)
-        }finally{
-             setisLoading(false)
-        }
+    //         })
+    //     } catch (error) {
+    //         console.log(error)
+    //     }finally{
+    //          setisLoading(false)
+    //     }
 
 
-    }
+    // }
+
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
@@ -70,7 +71,7 @@ export default function ConfirmLogout({ open, onOpenChange }: DialogProps) {
                     </AlertDialogCancel>
 
                     <AlertDialogAction
-                        onClick={onConfirm}
+                        onClick={() => navigate('/')}
                         className="bg-red-600 text-white rounded-xl hover:bg-red-700"
                     >
                         {isLoading && <Loader2/>}

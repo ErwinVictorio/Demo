@@ -111,7 +111,7 @@ function AdminDashboard() {
           {/* Total Departments */}
           <div className="bg-white p-6 shadow rounded-xl flex items-center justify-between">
             <div>
-              <p className="text-gray-500">Total Departments</p>
+              <p className="text-gray-500">Total Subject</p>
               <h2 className="text-3xl font-semibold">{0}</h2>
             </div>
             <Building2 size={40} className="text-green-600" /> {/* 👈 ICON */}

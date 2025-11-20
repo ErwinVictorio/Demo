@@ -43,13 +43,13 @@ function StudentPortal() {
                         >
                             Announcements
                         </Link>
-
+{/* 
                         <Link
                             to="/my-docs"
                             className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
                         >
                             My Documents
-                        </Link>
+                        </Link> */}
 
                         <Link
                             to="/"
@@ -82,12 +82,12 @@ function StudentPortal() {
                             Announcements
                         </Link>
                         
-                        <Link
+                        {/* <Link
                             to="/my-docs"
                             className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
                         >
                             My Documents
-                        </Link>
+                        </Link> */}
                         <Link
                             to="/logout"
                             className="bg-blue-500 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-600 transition-all"
@@ -110,7 +110,7 @@ function StudentPortal() {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead>Requestor</TableHead>
+                                <TableHead>Full Name</TableHead>
                                 <TableHead>Teacher / Office</TableHead>
                                 <TableHead>Course</TableHead>
                                 <TableHead>Drive Link</TableHead>
