@@ -17,26 +17,11 @@ import {
 } from "@/components/ui/table"
 import { Trash2, Plus } from "lucide-react"
 import { useState } from "react"
-import axiosClient from '@/lib/axiosClient';
-import type { Subject } from "@/lib/types/global"
-import { useQuery, useQueryClient } from "@tanstack/react-query"
+
 import AddSubject from "@/components/modals/AddSubject"
 
 function SubjectList() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-
-    const queryClient = useQueryClient();
-
-
-    // FETCH THE DEPARTMENT LIST HERE
-    const { data: subjects = [] } = useQuery({
-        queryKey: ['subjects'],
-        queryFn: async () => {
-            const res = await axiosClient.get('/api/admin/list-subject');
-
-            return res.data.data as Subject[]
-        }
-    })
 
 
 
@@ -86,17 +71,17 @@ function SubjectList() {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                {subjects && subjects.map((dep, index) => (
-                                    <TableRow key={index} className="hover:bg-gray-50 transition">
-                                        <TableCell>{dep.id}</TableCell>
-                                        <TableCell>{dep.Subject_name}</TableCell>
-                                        <TableCell className="text-center">
-                                            <Button className="cursor-pointer" variant="destructive" size="icon">
-                                                <Trash2 className="h-4 w-4" />
-                                            </Button>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+
+                                <TableRow className="hover:bg-gray-50 transition">
+                                    <TableCell>1</TableCell>
+                                    <TableCell>Math</TableCell>
+                                    <TableCell className="text-center">
+                                        <Button className="cursor-pointer" variant="destructive" size="icon">
+                                            <Trash2 className="h-4 w-4" />
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+
 
                             </TableBody>
                         </Table>
@@ -109,7 +94,6 @@ function SubjectList() {
             <AddSubject
                 open={isOpen}
                 onOpenChange={setIsOpen}
-                onSuccess={() => queryClient.invalidateQueries({ queryKey: ['subjects'] })}
             />
         </main>
     )

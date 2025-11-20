@@ -21,7 +21,7 @@ function AnnouncementPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // 🔥 TEST DATA (No API yet)
+     
         const sampleData: Announcement[] = [
             {
                 id: 1,

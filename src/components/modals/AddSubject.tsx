@@ -32,10 +32,9 @@ import { toast } from "sonner"
 interface DialogProps {
   open: boolean,
   onOpenChange: (open: boolean) => void,
-  onSuccess?: () => void  // optional callback
 }
 
-function AddSubject({ open, onOpenChange, onSuccess }: DialogProps) {
+function AddSubject({ open, onOpenChange }: DialogProps) {
 
   const [IsLoading, setIsLoading] = useState<boolean>(false);
 
@@ -89,7 +88,6 @@ function AddSubject({ open, onOpenChange, onSuccess }: DialogProps) {
 
     //  Reset the for after submitting
     form.reset()
-    onSuccess?.()
     onOpenChange(false)
   }
 
