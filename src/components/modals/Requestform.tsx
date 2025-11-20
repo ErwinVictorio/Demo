@@ -36,8 +36,8 @@ const formSchema = z.object({
   teacherOffice: z.string().min(1, "Select a teacher or office."),
   title: z.string().min(2, "Title is required."),
   driveLink: z.string().url("Enter a valid Google Drive link."),
-  image: z.any().optional(), // ✅ Optional standalone image upload
-  uploads: z.record(z.string(), z.any()).optional(), // ✅ Optional requirement uploads
+  image: z.any().optional(),
+  uploads: z.record(z.string(), z.any()).optional(),
 });
 
 interface DialogProps {

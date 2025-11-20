@@ -10,6 +10,7 @@ import {
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { useNavigate } from "react-router-dom";
+import { Button } from "../ui/button";
 
 interface DialogProps {
     open: boolean,
@@ -63,11 +64,13 @@ export default function ConfirmLogout({ open, onOpenChange }: DialogProps) {
                     <AlertDialogCancel className="rounded-xl">
                         Cancel
                     </AlertDialogCancel>
-
                     <AlertDialogAction
-                        onClick={() => navigate('/')}
-                        className="bg-red-600 text-white rounded-xl hover:bg-red-700"
+                       asChild
                     >
+                        <Button  onClick={() => navigate('/')}  className="bg-red-600 text-white rounded-xl hover:bg-red-700">
+                            Logout
+                        </Button>
+                        
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
